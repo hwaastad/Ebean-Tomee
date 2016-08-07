@@ -37,7 +37,7 @@ public class BusinessBeanIT {
         p.put("TestDS.JdbcDriver", "org.hsqldb.jdbcDriver");
         p.put("TestDS.JdbcUrl", "jdbc:hsqldb:mem:Test");
         p.put("TestDS.logSql", "true");
-        p.put("TestDS.jtaManaged", "false");
+        p.put("TestDS.jtaManaged", "true");
         //p.put("TestDS.defaultAutoCommit","false");
         return p;
     }

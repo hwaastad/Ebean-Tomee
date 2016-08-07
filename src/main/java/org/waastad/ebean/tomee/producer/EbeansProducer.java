@@ -15,6 +15,7 @@ import javax.enterprise.inject.Disposes;
 import javax.enterprise.inject.Produces;
 import javax.sql.DataSource;
 import lombok.extern.slf4j.Slf4j;
+import org.waastad.ebean.tomee.domain.Contact;
 
 /**
  *
@@ -47,6 +48,10 @@ public class EbeansProducer {
         config.setName("TestDsServer");
         config.setDataSource(datasource);
         config.loadFromProperties();
+        config.addPackage(Contact.class.getPackage().getName());
+        config.setUseJtaTransactionManager(true);
+        config.setAutoCommitMode(true);
+
         config.setDefaultServer(true);
         config.setRegister(true);
 
